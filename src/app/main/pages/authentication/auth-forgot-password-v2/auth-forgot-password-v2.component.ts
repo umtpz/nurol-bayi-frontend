@@ -15,7 +15,7 @@ export class AuthForgotPasswordV2Component implements OnInit {
   private _unsubscribeAll: Subject<any>;
 
   showInfo = false;
-  passwordChanged = true;
+  passwordChanged = false;
 
 
   constructor(private _coreConfigService: CoreConfigService,) {

@@ -1,0 +1,143 @@
+<div class="auth-wrapper auth-v2">
+  <div class="auth-inner row m-0">
+    <!-- Brand logo-->
+    <!-- <a class="brand-logo" href="javascript:void(0);">
+      <img src="{{ coreConfig.app.appLogoImage }}" alt="brand-logo" height="28" />
+      <h2 class="brand-text text-primary ml-1">{{ coreConfig.app.appName }}</h2>
+    </a> -->
+
+    <!-- Login-->
+    <div class="d-flex col-lg-4 align-items-center auth-bg px-2 p-lg-5">
+      <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
+        <h1 style="color: #4998f7; font-weight: bold !important; text-align: center;"
+          class="card-title font-weight-bold mb-2">
+          Hoşgeldiniz...</h1>
+        <!-- <p class="card-text mb-2">Please sign-in to your account and start the adventure</p> -->
+        <!-- <ngb-alert [type]="'primary'" [dismissible]="false">
+          <div class="alert-body font-small-2">
+            <p>
+              <small class="mr-50"><span class="font-weight-bold">Admin:</span> admin@demo.com | admin</small>
+            </p>
+            <p>
+              <small class="mr-50"><span class="font-weight-bold">Client:</span> client@demo.com | client</small>
+            </p>
+          </div>
+          <span
+            class="feather icon-help-circle auth-help-icon font-medium-3"
+            placement="left"
+            ngbTooltip="This is just for role based JWT authorization demo purpose"
+          ></span>
+        </ngb-alert> -->
+
+        <ngb-alert [type]="'danger'" [dismissible]="false" *ngIf="error">
+          <div class="alert-body">
+            <p>{{ error }}</p>
+          </div>
+        </ngb-alert>
+
+        <form class="auth-login-form mt-2" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <!-- <label class="form-label" for="login-email">Email</label> -->
+            <div class="input-container">
+              <img src="assets/images/icons/user.svg" class="input-icon" />
+              <input type="text" formControlName="email" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.email.errors }" placeholder="Bayi Kodunuz"
+                aria-describedby="login-dealer-code" autofocus="" tabindex="1" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <!-- <label class="form-label" for="login-email">Email</label> -->
+            <div class="input-container">
+              <img src="assets/images/icons/smartphone.svg" class="input-icon" />
+              <input type="text" formControlName="email" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.email.errors }" placeholder="Cep Telefonunuz"
+                aria-describedby="login-email" autofocus="" tabindex="1" />
+            </div>
+            <!-- <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+              <div *ngIf="f.email.errors.required">Bayi kodu gerekli</div>
+              <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+            </div> -->
+          </div>
+
+
+          <div class="form-group">
+            <div class="d-flex justify-content-between">
+              <!-- <label for="login-password">Password</label
+              > -->
+
+            </div>
+            <div class="input-container">
+              <img src="assets/images/icons/lock.svg" class="input-icon" />
+              <div class="input-group input-group-merge form-password-toggle"
+                style="border-radius: 24px 0 0 24px; overflow: hidden;">
+                <input [type]="passwordTextType ? 'text' : 'password'" formControlName="password"
+                  class="form-control form-control-merge"
+                  [ngClass]="{ 'is-invalid error': submitted && f.password.errors }" placeholder="Şifreniz"
+                  aria-describedby="login-password" tabindex="2" />
+                <div class="input-group-append">
+                  <span class="input-group-text cursor-pointer"><i class="feather font-small-4" [ngClass]="{
+                      'icon-eye-off': passwordTextType,
+                      'icon-eye': !passwordTextType
+                    }" (click)="togglePasswordTextType()"></i></span>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback"
+              [ngClass]="{ 'd-block': submitted && f.password.errors }">
+              <div *ngIf="f.password.errors.required">Password is required</div>
+            </div>
+          </div>
+          <div class="form-group" style="display: flex; justify-content: space-between;">
+            <div class="custom-control custom-checkbox">
+              <input class="custom-control-input" id="remember-me" type="checkbox" tabindex="3" />
+              <label class="custom-control-label" for="remember-me"> Beni hatırla</label>
+            </div>
+            <a routerLink="/pages/authentication/forgot-password-v2"><small>Şifremi unuttum?</small></a>
+          </div>
+          <button [disabled]="loading" class="btn btn-primary btn-block" tabindex="4" rippleEffect>
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>SMS Şifresi Al
+          </button>
+        </form>
+        <!-- <p class="text-center mt-2">
+          <span>New on our platform?</span
+          ><a routerLink="/pages/authentication/register-v2"><span>&nbsp;Create an account</span></a>
+        </p>
+        <div class="divider my-2">
+          <div class="divider-text">or</div>
+        </div>
+        <div class="auth-footer-btn d-flex justify-content-center">
+          <a class="btn btn-facebook" href="javascript:void(0)"><i data-feather="facebook"></i></a
+          ><a class="btn btn-twitter white" href="javascript:void(0)"><i data-feather="twitter"></i></a
+          ><a class="btn btn-google" href="javascript:void(0)"><i data-feather="mail"></i></a
+          ><a class="btn btn-github" href="javascript:void(0)"><i data-feather="github"></i></a>
+        </div> -->
+      </div>
+    </div>
+    <!-- /Login-->
+
+    <!-- /Brand logo-->
+    <!-- Left Text-->
+    <div class="col-lg-8 p-5"
+      style="display: flex; justify-content: space-evenly; align-items: center; flex-direction: column; gap: 64px;">
+      <img class="img-fluid" [src]="
+            coreConfig.layout.skin === 'dark'
+              ? 'assets/images/pages/login-v2-dark.svg'
+              : 'assets/images/pages/login-v2.svg'
+          " alt="Login V2" />
+      <div style="width: 50%;">
+        <h3 style="color: #4998f7; font-weight: bold !important;">Bize Ulaşın...</h3>
+        <div style="flex-direction: column; justify-content: left; margin-bottom: 64px;">
+          <div class="hyper-container"><img src="assets/images/icons/message-square.svg" style="margin-right: 16px; width: 24px;"/><a class="hyper">Bayi temsilcisi ile görüşün.</a></div>
+          <br>
+          <div class="hyper-container"><img src="assets/images/icons/mail.svg" style="margin-right: 16px; width: 24px;"/><a class="hyper">info@bank.com.tr</a></div>
+          <br>
+          <div class="hyper-container"><img src="assets/images/icons/phone.svg" style="margin-right: 16px; width: 24px;"/><a>+90 212 333 44 55</a></div>
+        </div>
+      </div>
+    </div>
+    <!-- /Left Text-->
+
+
+  </div>
+</div>

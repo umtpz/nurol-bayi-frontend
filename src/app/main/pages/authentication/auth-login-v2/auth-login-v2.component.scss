@@ -1,0 +1,59 @@
+@import '@core/scss/base/bootstrap-extended/include'; // Bootstrap includes
+@import '@core/scss/base/pages/page-auth.scss';
+
+.auth-help-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+::placeholder {
+  color: #444 !important;
+  opacity: 1;
+}
+
+::-ms-input-placeholder {
+  color: #444 !important;
+}
+
+.img-fluid{
+  width: 60% !important;
+  background-color: #f6f6f6;
+}
+
+input {
+  padding: 24px 16px 24px 48px !important;
+  border: none !important;
+  background: #f6f6f6 !important;
+}
+
+.input-container {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.input-group-text {
+  border: none !important;
+  background: #f6f6f6;
+  border-radius: 0 24px 24px 0;
+}
+
+.input-icon {
+  position: absolute;
+  top: 15px;
+  left: 16px;
+  width: 18px;
+  z-index: 100;
+  opacity: .9;
+}
+
+.hyper{
+  color: #4998f7 !important;
+}
+
+.hyper-container{
+  margin-top: 8px;
+  display: inline-flex;
+  flex-direction: row;
+}

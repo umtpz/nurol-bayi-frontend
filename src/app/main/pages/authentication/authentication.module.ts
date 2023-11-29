@@ -19,6 +19,8 @@ import { AuthRegisterV2Component } from 'app/main/pages/authentication/auth-regi
 import { AuthResetPasswordV1Component } from 'app/main/pages/authentication/auth-reset-password-v1/auth-reset-password-v1.component';
 import { AuthResetPasswordV2Component } from 'app/main/pages/authentication/auth-reset-password-v2/auth-reset-password-v2.component';
 
+import { OtpComponent } from './otp/otp.component';
+
 // routing
 const routes: Routes = [
   {
@@ -52,6 +54,10 @@ const routes: Routes = [
   {
     path: 'authentication/forgot-password-v2',
     component: AuthForgotPasswordV2Component
+  },
+  {
+    path: 'authentication/otp',
+    component: OtpComponent
   }
 ];
 
@@ -64,7 +70,8 @@ const routes: Routes = [
     AuthForgotPasswordV1Component,
     AuthForgotPasswordV2Component,
     AuthResetPasswordV1Component,
-    AuthResetPasswordV2Component
+    AuthResetPasswordV2Component,
+    OtpComponent
   ],
   imports: [CommonModule, RouterModule.forChild(routes), NgbModule, FormsModule, ReactiveFormsModule, CoreCommonModule]
 })

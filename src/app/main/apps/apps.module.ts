@@ -11,6 +11,10 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 // routing
 const routes: Routes = [
   {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
+  },
+  {
     path: 'email',
     loadChildren: () => import('./email/email.module').then(m => m.EmailModule)
   },
@@ -43,7 +47,8 @@ const routes: Routes = [
 FullCalendarModule.registerPlugins([dayGridPlugin, timeGridPlugin, listPlugin, interactionPlugin]);
 
 @NgModule({
-  declarations: [],
+  declarations: [
+  ],
   imports: [CommonModule, RouterModule.forChild(routes)]
 })
 export class AppsModule {}

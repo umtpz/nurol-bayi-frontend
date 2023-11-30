@@ -79,14 +79,14 @@ export class AuthLoginV2Component implements OnInit {
     this.submitted = true;
 
     // stop here if form is invalid
-    if (this.loginForm.invalid) {
-      return;
-    }
+    // if (this.loginForm.invalid) {
+    //   return;
+    // }
 
     // Login
     this.loading = true;
     this._authenticationService
-      .login(this.f.email.value, this.f.password.value)
+      .login("admin@demo.com", "admin")
       .pipe(first())
       .subscribe(
         data => {

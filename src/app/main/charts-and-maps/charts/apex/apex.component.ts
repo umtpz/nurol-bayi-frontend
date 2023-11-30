@@ -232,7 +232,10 @@ export class ApexComponent implements OnInit {
     this.apexLineChart = {
       series: [
         {
-          data: [280, 200, 220, 180, 270, 250, 70, 90, 200, 150, 160, 100, 150, 100, 50]
+          data: [180, 100, 320, 140, 170, 150, 50, 20, 20, 150, 160, 100]
+        },
+        {
+          data: [280, 200, 220, 180, 270, 250, 70, 90, 200, 150, 160, 100]
         }
       ],
       chart: {
@@ -258,7 +261,7 @@ export class ApexComponent implements OnInit {
         strokeColors: [colors.solid.white],
         colors: [colors.solid.warning]
       },
-      colors: [colors.solid.warning],
+      colors: ["#00f", "#ddd", this.chartColors.area.series3],
       dataLabels: {
         enabled: false
       },
@@ -267,21 +270,18 @@ export class ApexComponent implements OnInit {
       },
       xaxis: {
         categories: [
-          '7/12',
-          '8/12',
-          '9/12',
-          '10/12',
-          '11/12',
-          '12/12',
-          '13/12',
-          '14/12',
-          '15/12',
-          '16/12',
-          '17/12',
-          '18/12',
-          '19/12',
-          '20/12',
-          '21/12'
+          'Ocak',
+          'Şubat',
+          'Mart',
+          'Nisan',
+          'Mayıs',
+          'Haziran',
+          'Temmuz',
+          'Ağustos',
+          'Eylül',
+          'Ekim',
+          'Kasım',
+          'Aralık'
         ]
       },
       tooltip: {

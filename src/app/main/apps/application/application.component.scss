@@ -1,3 +1,12 @@
+::placeholder {
+    color: black !important;
+    opacity: 1;
+}
+
+::-ms-input-placeholder {
+    color: black !important;
+}
+
 .page-number {
     background: #4998f7;
     width: 32px;
@@ -27,4 +36,34 @@
     align-items: center;
     font-size: 12px;
     height: 36px;
+}
+
+.input {
+    background: #e8e8e8;
+    padding: 9px 22px;
+    border-radius: 32px;
+    margin-bottom: 16px;
+    border: none;
+    width: 100%;
+}
+
+
+.col-5,
+.col-9,
+.col-12 {
+    padding: 0 !important
+}
+
+.button {
+    background: #4998f7;
+    color: white;
+    font-weight: bold;
+    padding: 8px 20px;
+    border-radius: 32px;
+    border: none;
+}
+
+.button:hover {
+    cursor: pointer;
+    opacity: .7;
 }

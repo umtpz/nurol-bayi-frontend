@@ -1,0 +1,30 @@
+.page-number {
+    background: #4998f7;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 16px;
+    position: relative;
+}
+
+.tie-arrow {
+    width: 82px;
+    height: 23px;
+    position: absolute;
+    left: 33px;
+    top: 9px;
+}
+
+.page-title {
+    position: absolute;
+    color: black;
+    text-align: center;
+    top: -48px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    height: 36px;
+}

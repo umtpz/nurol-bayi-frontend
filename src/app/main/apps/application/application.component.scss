@@ -46,6 +46,7 @@
     border: none;
     width: 100%;
 }
+
 .col-4,
 .col-5,
 .col-6,
@@ -81,7 +82,7 @@ th {
     padding: 3px 8px;
 }
 
-.insurance{
+.insurance {
     background: #ac5eb9;
     color: white;
     font-weight: bold;
@@ -90,6 +91,46 @@ th {
     text-align: center;
 }
 
-textarea{
+textarea {
     resize: none;
+}
+
+.application-accept-popup {
+    border-radius: 24px;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    width: 40%;
+    background: #e8e8e8;
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+    padding: 24px;
+}
+
+.offer-box {
+    font-size: 16px;
+    color: black;
+    height: 64px;
+    background: white;
+    position: relative;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.offer-box-title{
+    text-align: start;
+    padding-left: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    left: -45%;
+    top: -30%;
+    width: 66%;
+    height: 60%;
+    position: absolute;
+    clip-path: polygon(0 0, 80% 0, 100% 50%, 80% 100%, 0 100%);
 }

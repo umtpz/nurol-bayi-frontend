@@ -6,8 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./application.component.scss']
 })
 export class ApplicationComponent implements OnInit {
-  page = 1
+  page = 2
   pageSection = 3
+  showPopup = false
   constructor() { }
 
   ngOnInit(): void {
@@ -31,5 +32,8 @@ export class ApplicationComponent implements OnInit {
   }
   prevPageSection() {
     if (this.pageSection > 0) this.pageSection--
+  }
+  hidePopup(){
+    this.showPopup = false
   }
 }

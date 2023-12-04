@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./application.component.scss']
 })
 export class ApplicationComponent implements OnInit {
-  page = 2
-  pageSection = 3
+  page = 3
+  pageSection = 0
   showPopup = false
   constructor() { }
 

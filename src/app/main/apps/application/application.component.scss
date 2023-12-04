@@ -1,9 +1,9 @@
-::placeholder {
+::placeholder .input {
     color: black !important;
     opacity: 1;
 }
 
-::-ms-input-placeholder {
+::-ms-input-placeholder .input {
     color: black !important;
 }
 
@@ -133,4 +133,33 @@ textarea {
     height: 60%;
     position: absolute;
     clip-path: polygon(0 0, 80% 0, 100% 50%, 80% 100%, 0 100%);
+}
+
+.input-white {
+    width: 150px;
+    padding: 8px 12px 8px 40px;
+    font-size: 12px;
+    border-radius: 16px;
+    border: solid 1px #ddd;
+}
+
+.input-icon {
+    position: absolute;
+    width: 16px;
+    opacity: .6;
+    top: 8px;
+    left: 11px;
+}
+
+.upload-button{
+    background:#4998f7;
+    color: white;
+    border: none;
+    border-radius: 16px;
+    padding: 3px 8px;
+    font-size: 11px;
+}
+.upload-status{
+    width: 18px;
+    height: 18px;
 }

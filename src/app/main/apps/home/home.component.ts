@@ -48,7 +48,7 @@ export interface ChartOptions {
 })
 export class HomeComponent implements OnInit {
   @ViewChild('apexLineChartRef') apexLineChartRef: any;
-  
+
   public isMenuToggled = false;
   public contentHeader: object;
   public DateRangeOptions = {
@@ -87,11 +87,11 @@ export class HomeComponent implements OnInit {
       series: [
         {
           name: 'Bayi Toplam',
-          data: [16,4,21,18,48,78,33,56,90,46,21,28]
+          data: [16, 4, 21, 18, 48, 78, 33, 56, 90, 46, 21, 28]
         },
         {
           name: 'Siz',
-          data: [0,15,42,30,33,70,58,48,53,23,68,46]
+          data: [0, 15, 42, 30, 33, 70, 58, 48, 53, 23, 68, 46]
         }
       ],
       chart: {

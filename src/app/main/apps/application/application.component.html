@@ -1,0 +1,432 @@
+<div style="position: relative;">
+
+    <!--Page status-->
+    <div style="display: flex; justify-content: center; padding-top: 64px;">
+        <div style="display: flex; gap: 86px;">
+            <div (click)="toPage(0)" class="page-number" [ngStyle]="page != 0 && {'background':'#ddd','color':'black'}">
+                1
+                <div class="page-title">Ön Değerlendirme</div>
+                <img class="tie-arrow" src="assets/images/icons/arrow.png" />
+            </div>
+            <div (click)="toPage(1)" class="page-number" [ngStyle]="page != 1 && {'background':'#ddd','color':'black'}">
+                2
+                <div class="page-title">Diğer Bilgiler</div>
+                <img class="tie-arrow" src="assets/images/icons/arrow.png" />
+            </div>
+            <div (click)="toPage(2)" class="page-number" [ngStyle]="page != 2 && {'background':'#ddd','color':'black'}">
+                3
+                <div class="page-title">Teklif</div>
+                <img class="tie-arrow" src="assets/images/icons/arrow.png" />
+            </div>
+            <div (click)="toPage(3)" class="page-number" [ngStyle]="page != 3 && {'background':'#ddd','color':'black'}">
+                4
+                <div class="page-title">Evrak</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-center mt-3">
+        <!--page 0-->
+        <div class="col-8" *ngIf="page==0">
+
+            <div class="col-12 d-flex justify-content-between mb-2">
+                <div class="col-5 flex-column">
+                    <input class="input" placeholder="Finansman Türü" />
+                    <input class="input" placeholder="Talep Edilen Tutar" />
+                    <input class="input" placeholder="Vade" />
+                    <input class="input" placeholder="Cep Telefonu" />
+                    <input class="input" placeholder="Kampanya" />
+                </div>
+
+                <div class="col-5 flex-column">
+                    <input class="input" placeholder="TC Kimlik Numarası" />
+                    <input class="input" placeholder="Ad" />
+                    <input class="input" placeholder="İkinci Ad" />
+                    <input class="input" placeholder="Soyad" />
+                    <input class="input" placeholder="Doğum Tarihi gg/aa/yyyy" />
+                </div>
+            </div>
+
+
+            <div class="custom-control custom-checkbox">
+                <input class="custom-control-input" type="checkbox" tabindex="3" />
+                <label class="custom-control-label">Talebimin değerlendirilmesi için yukarı vermiş olduğum
+                    bilgilerin doğru olduğunu, kayıt edilmesini ve finansal kuruluşlarla paylaşılmasını
+                    onaylıyorum.</label>
+            </div>
+            <div class="custom-control custom-checkbox mt-1">
+                <input class="custom-control-input" type="checkbox" tabindex="3" />
+                <label class="custom-control-label">Kişisel Verilerin Korunması ve İşlenmesine İlişkin Aydınlatma Menini
+                    okudum ve anladım.</label>
+            </div>
+
+            <div class="d-flex justify-content-end mt-4">
+                <button class="button">Devam</button>
+            </div>
+        </div>
+        <!--page 1-->
+        <div class="col-8" *ngIf="page==1">
+            <div class="col-12" style="border-radius: 6px; overflow: hidden; border: solid 2px #4998f7;">
+                <table>
+                    <tr>
+                        <th class="th" style="border-top-left-radius: 6px;">Başvuru</th>
+                        <th class="th">TC Kimlik No</th>
+                        <th class="th">Ad Soyad</th>
+                        <th class="th">Talep Tutarı</th>
+                        <th class="th">Vade</th>
+                    </tr>
+                    <tr>
+                        <td class="td">123456</td>
+                        <td class="td">12345678910</td>
+                        <td class="td">Umut Topuz</td>
+                        <td class="td">123.456</td>
+                        <td class="td">8</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-12 d-flex justify-content-between mt-4 mb-4" *ngIf="page==1 && pageSection==0">
+                <div class="col-5 flex-column">
+                    <input class="input" placeholder="Marka" />
+                    <input class="input" placeholder="Yıl" />
+                    <input class="input" placeholder="Model" />
+                    <input class="input" placeholder="Kilometre" />
+                </div>
+
+                <div class="col-5 flex-column">
+                    <input class="input" placeholder="Plaka" />
+                    <input class="input" placeholder="Şasi No" />
+                    <input class="input" placeholder="Kullanım Amacı" />
+                    <input class="input" placeholder="Satış Tutarı" />
+                </div>
+
+            </div>
+            <div class="col-12 d-flex justify-content-between mb-2" *ngIf="page==1 && pageSection==0">
+                <div class="col-5 insurance">Kasko Değeri | 650.000 ₺</div>
+            </div>
+            <div class="col-12 d-flex justify-content-between mt-4 mb-4" *ngIf="page==1 && pageSection==1">
+                <div class="col-5 flex-column">
+                    <input class="input" placeholder="Anne Kızlık Soyadı" />
+                    <input class="input" placeholder="Ev Sahipliği" />
+                    <input class="input" placeholder="Çalışma Şekli" />
+                    <input class="input" placeholder="Son İş Yerinde Çalışma Süresi" />
+                    <input class="input" placeholder="İşyeri Vergi Kimlik Numarası" />
+                </div>
+
+                <div class="col-5 flex-column">
+                    <input class="input" placeholder="Kimlik No" />
+                    <input class="input" placeholder="Eğitim Durumu" />
+                    <input class="input" placeholder="Aylık Net Gelir" />
+                    <input class="input" placeholder="Meslek" />
+                    <input class="input" placeholder="İşyeri Adı" />
+                </div>
+
+            </div>
+            <div class="col-12 d-flex justify-content-between mt-4 mb-4" *ngIf="page==1 && pageSection==2">
+                <div class="col-5 flex-column">
+                    <textarea class="input" rows="6" style="height: 96px;" placeholder="İş Adresi"></textarea>
+                    <input class="input" placeholder="İş Telefonu" />
+                </div>
+
+                <div class="col-5 flex-column">
+                    <input class="input" placeholder="İl" />
+                    <input class="input" placeholder="İlçe" />
+                    <input class="input" placeholder="E-Posta" />
+                </div>
+
+            </div>
+
+            <div class="custom-control custom-checkbox" *ngIf="page==1 && pageSection==2">
+                <input class="custom-control-input" type="checkbox" tabindex="3" />
+                <label class="custom-control-label">Ev adresimin Nüfus İdaresinde kayıtlı olan adresimle aynı olduğunu
+                    onaylıyorum.</label>
+            </div>
+
+            <div class="col-12 d-flex justify-content-between mt-4" style="gap: 16px; margin-left: -16px;"
+                *ngIf="page==1 && pageSection==3">
+                <div class="col-4 flex-column">
+                    <input class="input" placeholder="E-Posta" />
+                    <textarea class="input" rows="6" style="height: 96px;" placeholder="İş Adresi"></textarea>
+                    <input class="input" placeholder="İl" />
+                    <input class="input" placeholder="İlçe" />
+                </div>
+
+                <div class="col-4 flex-column">
+                    <input class="input" placeholder="E-Posta" />
+                    <textarea class="input" rows="6" style="height: 96px;" placeholder="İş Adresi"></textarea>
+                    <input class="input" placeholder="İl" />
+                    <input class="input" placeholder="İlçe" />
+                </div>
+
+                <div class="col-4 flex-column">
+                    <input class="input" placeholder="Ürün Kime Alınıyor?" />
+                    <input class="input" placeholder="Teslimat Tarihi gg/aa/yyyy" />
+                    <input class="input" placeholder="İş Telefonu" />
+                </div>
+
+            </div>
+            <div class="col-8 flex-column" *ngIf="page==1 && pageSection==3">
+                <input class="input" style="margin-left: -16px; width: calc(100% + 16px);" placeholder="Açıklama" />
+            </div>
+            <div class="custom-control custom-checkbox" style="margin-left: -16px;" *ngIf="page==1 && pageSection==3">
+                <input class="custom-control-input" type="checkbox" tabindex="3" />
+                <label class="custom-control-label">Ev adresimin Nüfus İdaresinde kayıtlı olan adresimle aynı olduğunu
+                    onaylıyorum.</label>
+            </div>
+
+
+
+            <div class="d-flex justify-content-between mt-4">
+                <button class="button"
+                    style="background: white; border: solid 2px #4998f7; color: #4998f7;">İptal</button>
+                <div>
+                    <button (click)="prevPageSection()" class="button" style="margin-right: 16px;">Geri</button>
+                    <button (click)="nextPageSection()" class="button">Devam</button>
+                </div>
+            </div>
+        </div>
+        <!--page 2-->
+        <div class="col-8" *ngIf="page==2">
+            <div class="col-12" style="border-radius: 6px; overflow: hidden; border: solid 2px #4998f7;">
+                <table>
+                    <tr>
+                        <th class="th" style="border-top-left-radius: 6px;">Başvuru</th>
+                        <th class="th">TC Kimlik No</th>
+                        <th class="th">Ad Soyad</th>
+                        <th class="th">Talep Tutarı</th>
+                        <th class="th">Vade</th>
+                    </tr>
+                    <tr>
+                        <td class="td">123456</td>
+                        <td class="td">12345678910</td>
+                        <td class="td">Umut Topuz</td>
+                        <td class="td">123.456</td>
+                        <td class="td">30</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="col-12" *ngIf="!showPaymentPlan">
+                <div class="col-12 d-flex justify-content-around mt-4">
+                    <div class="col-2 offer-box">
+                        <div class="offer-box-title" style="background: #d491dd; color: black;">Oran</div>
+                        % 2,59
+                    </div>
+                    <div class="col-2 offer-box">
+                        <div class="offer-box-title" style="background: #fcd284; color: black;">Vade</div>
+                        30 ay
+                    </div>
+                    <div class="col-2 offer-box">
+                        <div class="offer-box-title" style="background: #c1d776; color: black;">Taksit</div>
+                        2.683 ₺
+                    </div>
+                </div>
+
+                <div class="col-12 d-flex justify-content-around mt-4">
+                    <div class="col-2 offer-box">
+                        <div class="offer-box-title" style="background: #fdaed1; color: black;">Kredi<br>Tutarı</div>
+                        50.000 ₺
+                    </div>
+                    <div class="col-2 offer-box">
+                        <div class="offer-box-title" style="background: #aee3fd; color: black;">Masraf</div>
+                        287,80 ₺
+                    </div>
+                    <div class="col-2 offer-box">
+                        <div class="offer-box-title" style="background: #3966d1; color: white;">Faiz</div>
+                        30.208.30 ₺
+                    </div>
+                </div>
+
+                <div class="col-12 d-flex justify-content-around mt-4">
+                    <div class="col-2 offer-box">
+                        <div class="offer-box-title" style="background: #ede9a0; color: black;">Toplam<br>Maliyet</div>
+                        80.491,30 ₺
+                    </div>
+                    <div class="col-2 offer-box">
+                        <div class="offer-box-title" style="background: #94f27b; color: black;">Geçerlilik<br>Tarihi
+                        </div>
+                        12/12/2023
+                    </div>
+                    <div class="col-2 offer-box" (click)="showPaymentPlan = true">
+                        <div class="offer-box-title" style="background: #868484; color: white;">Ödeme<br>Planı</div>
+                        Tıklayın
+                        <img style="width: 22px; margin: 22px -15px 0 10px; transform: rotateZ(12deg);"
+                            src="assets/images/icons/mouse-pointer.svg" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="card m-3 p-2" *ngIf="showPaymentPlan">
+                
+                <div style="height: 320px; overflow-y: auto; overflow-x: hidden;">
+                    <table style="text-align: center;">
+                        <tr>
+                            <th class="sticky">Dönem</th>
+                            <th class="sticky">Kalan Anapara</th>
+                            <th class="sticky">Aylık Taksit</th>
+                            <th class="sticky">Ödenen Faiz</th>
+                            <th class="sticky">Ödenen Anapara</th>
+                        </tr>
+                        <tr *ngFor="let item of paymentPlan; let i = index;"
+                            [ngStyle]="i % 2 == 0 && {'background':'#f2f2f2','border-bottom':'solid 1px #ccc','border-top':'solid 1px #ddd'}">
+                            <td>{{i+1}}</td>
+                            <td>{{item[0]+" ₺"}}</td>
+                            <td>{{item[1]+" ₺"}}</td>
+                            <td>{{item[2]+" ₺"}}</td>
+                            <td>{{item[3]+" ₺"}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between mt-4">
+                <button class="button"
+                    style="background: white; border: solid 2px #4998f7; color: #4998f7;">İptal</button>
+                <div>
+                    <button class="button">Teklifi Kabul Et</button>
+                </div>
+            </div>
+        </div>
+
+        <!--page 3-->
+        <div class="col-8" *ngIf="page==3">
+            <div style="display: flex; justify-content: center; gap: 16px;">
+                <div style="position: relative;"><img class="input-icon" src="assets/images/icons/search.svg" /><input
+                        class="input-white" placeholder="TC Kimlik No" /></div>
+                <div style="position: relative;"><img class="input-icon" src="assets/images/icons/search.svg" /><input
+                        class="input-white" placeholder="Başvuru No" /></div>
+                <button class="button">Ara</button>
+            </div>
+
+            <div class="col-12 mt-3" style="border-radius: 6px; overflow: hidden; border: solid 2px #4998f7;">
+                <table>
+                    <tr>
+                        <th class="th" style="border-top-left-radius: 6px;">Başvuru</th>
+                        <th class="th">TC Kimlik No</th>
+                        <th class="th">Ad Soyad</th>
+                        <th class="th">Talep Tutarı</th>
+                        <th class="th">Vade</th>
+                    </tr>
+                    <tr>
+                        <td class="td">123456</td>
+                        <td class="td">12345678910</td>
+                        <td class="td">Umut Topuz</td>
+                        <td class="td">123.456</td>
+                        <td class="td">8</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="custom-control custom-checkbox mt-2 mb-2">
+                <input class="custom-control-input" type="checkbox" tabindex="3" />
+                <label class="custom-control-label">Müşteri SMS ile gönderilen link'de yer alan sözleşmeleri onayladı
+                    mı?</label>
+            </div>
+
+            <div class="col-12"
+                style="background: #4998f7; color: white; padding: 4px 8px !important; font-size: 12px;">EVRAK LİSTESİ
+            </div>
+
+            <div>
+                <div class="col-12 d-flex flex-row mt-1" style="background: #efefef; padding: 4px 8px !important;">
+                    <div class="col-4">Kimlik Fotokopisi</div>
+                    <div class="col-4 d-flex flex-row">
+                        <div class="col-4 d-flex justify-content-center"><button class="upload-button">Yükle</button>
+                        </div>
+                        <div class="col-3" style="border-right: solid 2px #d8d8d8;"><img class="upload-status"
+                                src="assets/images/icons/check.png" /></div>
+                        <div class="col-3 d-flex flex-row justify-content-center"
+                            style="border-right: solid 2px #d8d8d8;"><img class="upload-status"
+                                src="assets/images/icons/edit.png" /></div>
+                    </div>
+                    <div class="col-4"></div>
+                </div>
+                <div class="col-12 d-flex flex-row" style="padding: 4px 8px !important;">
+                    <div class="col-4">Rehin Sözleşmesi</div>
+                    <div class="col-4 d-flex flex-row">
+                        <div class="col-4 d-flex justify-content-center"><button class="upload-button">Yükle</button>
+                        </div>
+                        <div class="col-3" style="border-right: solid 2px #d8d8d8;"><img class="upload-status"
+                                src="assets/images/icons/check.png" /></div>
+                        <div class="col-3 d-flex flex-row justify-content-center"
+                            style="border-right: solid 2px #d8d8d8;"><img class="upload-status"
+                                src="assets/images/icons/edit.png" /></div>
+                    </div>
+                    <div class="col-4"></div>
+                </div>
+                <div class="col-12 d-flex flex-row" style="background: #efefef; padding: 4px 8px !important;">
+                    <div class="col-4 d-flex justify-content-between">
+                        <div>Uzaktan İşlem Sözleşmesi</div><button class="upload-button"
+                            style="border: solid 1px #4998f7; color: #4998f7; background: white;">Yazdır</button>
+                    </div>
+                    <div class="col-4 d-flex flex-row">
+                        <div class="col-4 d-flex justify-content-center"><button class="upload-button">Yükle</button>
+                        </div>
+                        <div class="col-3" style="border-right: solid 2px #d8d8d8;"><img class="upload-status"
+                                src="assets/images/icons/check.png" /></div>
+                        <div class="col-3 d-flex flex-row justify-content-center"
+                            style="border-right: solid 2px #d8d8d8;"><img class="upload-status"
+                                src="assets/images/icons/edit.png" /></div>
+                    </div>
+                    <div class="col-4"></div>
+                </div>
+                <div class="col-12 d-flex flex-row" style="padding: 4px 8px !important;">
+                    <div class="col-4">Sigorta</div>
+                    <div class="col-4 d-flex flex-row">
+                        <div class="col-4 d-flex justify-content-center"><button class="upload-button">Yükle</button>
+                        </div>
+                        <div class="col-3" style="border-right: solid 2px #d8d8d8;"><img class="upload-status"
+                                src="assets/images/icons/check.png" /></div>
+                        <div class="col-3 d-flex flex-row justify-content-center"
+                            style="border-right: solid 2px #d8d8d8;"><img class="upload-status"
+                                src="assets/images/icons/edit.png" /></div>
+                    </div>
+                    <div class="col-4"></div>
+                </div>
+                <div class="col-12 d-flex flex-row" style="background: #efefef; padding: 4px 8px !important;">
+                    <div class="col-4">Ruhsat</div>
+                    <div class="col-4 d-flex flex-row">
+                        <div class="col-4 d-flex justify-content-center"><button class="upload-button">Yükle</button>
+                        </div>
+                        <div class="col-3" style="border-right: solid 2px #d8d8d8;"><img class="upload-status"
+                                src="assets/images/icons/remove.png" /></div>
+                        <div class="col-3 d-flex flex-row justify-content-center"
+                            style="border-right: solid 2px #d8d8d8;"><img class="upload-status"
+                                src="assets/images/icons/edit.png" /></div>
+                    </div>
+                    <div class="col-4">Ruhsat başka plakaya ait</div>
+                </div>
+
+            </div>
+            <div class="col-12 d-flex justify-content-center mt-3"><button class="button"
+                    style="font-size:12px;">Kaydet</button></div>
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <!--popups-->
+    <div style="position: absolute; top:0; left:0; bottom: 0; right: 0; background: rgba(255,255,255,.8); z-index: 1;"
+        *ngIf="showPopup">
+    </div>
+    <div class="application-accept-popup" *ngIf="showPopup">
+        <div>
+            234455 nolu başvuru değerlendirilmek üzere Banka'ya yönlendirilecektir. Bu aşamadan sonra başvuruda herhangi
+            bir
+            değişiklik yapılamaz. Bilgilerin doğruluğunu teyid ederek başvurunun Banka'ya gönderilmesini onaylıyor
+            musunuz?
+        </div>
+
+        <button (click)="hidePopup()" class="button mt-1 mb-1"
+            style="width: 100%; padding: 4px 20px;">Onaylıyorum</button>
+        <br>
+        <button (click)="hidePopup()" class="button"
+            style="width: 100%; padding: 4px 20px; background: white; border: solid 2px #4998f7; color: #4998f7;">Hayır,
+            başvuruyu
+            iptal et</button>
+    </div>
+</div>

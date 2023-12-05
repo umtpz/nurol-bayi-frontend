@@ -10,6 +10,13 @@ export const menu: CoreMenu[] = [
     icon: 'home',
     url: 'apps/home'
   },
+  {
+    id: 'application',
+    title: 'Başvuru',
+    type: 'item',
+    icon: 'file-text',
+    url: 'apps/application'
+  },
   // Dashboard
   {
     id: 'dashboard',

@@ -75,11 +75,13 @@ table {
     margin: -2px;
 }
 
-td,
-th {
+td, th{
+    padding: 3px 8px;
+}
+.td,
+.th {
     background: white;
     border: solid 2px #4998f7;
-    padding: 3px 8px;
 }
 
 .insurance {

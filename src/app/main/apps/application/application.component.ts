@@ -9,7 +9,7 @@ export class ApplicationComponent implements OnInit {
   page = 2
   pageSection = 0
   showPopup = false
-  showPaymentPlan = false
+  showPaymentPlan = true
   paymentPlan = [
     ["48.848","1.672","400","1.152"],
     ["48.848","1.672","400","1.152"],

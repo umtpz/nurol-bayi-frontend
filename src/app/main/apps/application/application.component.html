@@ -69,18 +69,18 @@
             <div class="col-12" style="border-radius: 6px; overflow: hidden; border: solid 2px #4998f7;">
                 <table>
                     <tr>
-                        <th style="border-top-left-radius: 6px;">Başvuru</th>
-                        <th>TC Kimlik No</th>
-                        <th>Ad Soyad</th>
-                        <th>Talep Tutarı</th>
-                        <th>Vade</th>
+                        <th class="th" style="border-top-left-radius: 6px;">Başvuru</th>
+                        <th class="th">TC Kimlik No</th>
+                        <th class="th">Ad Soyad</th>
+                        <th class="th">Talep Tutarı</th>
+                        <th class="th">Vade</th>
                     </tr>
                     <tr>
-                        <td>123456</td>
-                        <td>12345678910</td>
-                        <td>Umut Topuz</td>
-                        <td>123.456</td>
-                        <td>8</td>
+                        <td class="td">123456</td>
+                        <td class="td">12345678910</td>
+                        <td class="td">Umut Topuz</td>
+                        <td class="td">123.456</td>
+                        <td class="td">8</td>
                     </tr>
                 </table>
             </div>
@@ -256,22 +256,26 @@
             </div>
 
             <div class="card m-3 p-2" *ngIf="showPaymentPlan">
-                <table style="text-align: center;">
-                    <tr>
-                        <th>Dönem</th>
-                        <th>Kalan Anapara</th>
-                        <th>Aylık Taksit</th>
-                        <th>Ödenen Faiz</th>
-                        <th>Ödenen Anapara</th>
-                    </tr>
-                    <tr *ngFor="let item of paymentPlan; let i = index;" [ngStyle]="i % 2 == 0 && {'background':'#f2f2f2','border-bottom':'solid 1px #ccc','border-top':'solid 1px #ddd'}">
-                        <td>{{i+1}}</td>
-                        <td>{{item[0]+" ₺"}}</td>
-                        <td>{{item[1]+" ₺"}}</td>
-                        <td>{{item[2]+" ₺"}}</td>
-                        <td>{{item[3]+" ₺"}}</td>
-                    </tr>
-                </table>
+                
+                <div style="height: 320px; overflow-y: auto; overflow-x: hidden;">
+                    <table style="text-align: center;">
+                        <tr>
+                            <th>Dönem</th>
+                            <th>Kalan Anapara</th>
+                            <th>Aylık Taksit</th>
+                            <th>Ödenen Faiz</th>
+                            <th>Ödenen Anapara</th>
+                        </tr>
+                        <tr *ngFor="let item of paymentPlan; let i = index;"
+                            [ngStyle]="i % 2 == 0 && {'background':'#f2f2f2','border-bottom':'solid 1px #ccc','border-top':'solid 1px #ddd'}">
+                            <td>{{i+1}}</td>
+                            <td>{{item[0]+" ₺"}}</td>
+                            <td>{{item[1]+" ₺"}}</td>
+                            <td>{{item[2]+" ₺"}}</td>
+                            <td>{{item[3]+" ₺"}}</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
 
             <div class="d-flex justify-content-between mt-4">
@@ -296,18 +300,18 @@
             <div class="col-12 mt-3" style="border-radius: 6px; overflow: hidden; border: solid 2px #4998f7;">
                 <table>
                     <tr>
-                        <th style="border-top-left-radius: 6px;">Başvuru</th>
-                        <th>TC Kimlik No</th>
-                        <th>Ad Soyad</th>
-                        <th>Talep Tutarı</th>
-                        <th>Vade</th>
+                        <th class="th" style="border-top-left-radius: 6px;">Başvuru</th>
+                        <th class="th">TC Kimlik No</th>
+                        <th class="th">Ad Soyad</th>
+                        <th class="th">Talep Tutarı</th>
+                        <th class="th">Vade</th>
                     </tr>
                     <tr>
-                        <td>123456</td>
-                        <td>12345678910</td>
-                        <td>Umut Topuz</td>
-                        <td>123.456</td>
-                        <td>8</td>
+                        <td class="td">123456</td>
+                        <td class="td">12345678910</td>
+                        <td class="td">Umut Topuz</td>
+                        <td class="td">123.456</td>
+                        <td class="td">8</td>
                     </tr>
                 </table>
             </div>
@@ -352,7 +356,7 @@
                 <div class="col-12 d-flex flex-row" style="background: #efefef; padding: 4px 8px !important;">
                     <div class="col-4 d-flex justify-content-between">
                         <div>Uzaktan İşlem Sözleşmesi</div><button class="upload-button"
-                            style="border: solid 1px #4998f7; color: #4998f7; background: white;">Yükle</button>
+                            style="border: solid 1px #4998f7; color: #4998f7; background: white;">Yazdır</button>
                     </div>
                     <div class="col-4 d-flex flex-row">
                         <div class="col-4 d-flex justify-content-center"><button class="upload-button">Yükle</button>

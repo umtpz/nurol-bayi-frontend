@@ -75,14 +75,13 @@ table {
     margin: -2px;
 }
 
-td,
-th {
+td, th {
     padding: 3px 8px;
 }
 
-th {
+.sticky{
     position: sticky;
-    top: 0;
+    top: -2px;
     background: white;
 }
 

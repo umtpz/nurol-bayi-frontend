@@ -8,12 +8,10 @@
         <button class="search-button">Ara</button>
     </div>
 </div>
-<div style="display: flex; gap:32px;">
-    <section (window:resize)="onResize($event)" id="apex-line-charts" style="width: calc(100% - 232px);">
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <!-- <div
+<div style="width: 100%; display: inline-flex; gap:32px; margin: 0 16px;">
+    <section id="apex-line-charts" style="width: calc(100% - 342px);">
+        <div class="card">
+            <!-- <div
                         class="card-header d-flex flex-sm-row flex-column justify-content-md-between align-items-start justify-content-start">
                         <div>
                             <h4 class="card-title mb-25">Balance</h4>
@@ -27,55 +25,50 @@
                             </div>
                         </div>
                     </div> -->
-                    <div class="card-body">
-                        <div id="line-chart" #apexLineChartRef>
-                            <apx-chart [series]="apexLineChart.series" [chart]="{
-                  height: 400,
-                  width: isMenuToggled === false ? apexLineChartRef.offsetWidth : apexLineChart.chart.width,
-                  type: 'line',
-                  zoom: {
-                    enabled: false
-                  },
-                  toolbar: {
-                    show: false
-                  }
-                }" [xaxis]="apexLineChart.xaxis" [stroke]="apexLineChart.stroke" [tooltip]="apexLineChart.tooltip"
-                                [colors]="apexLineChart.colors" [dataLabels]="apexLineChart.dataLabels"
-                                [grid]="apexLineChart.grid"></apx-chart>
-                        </div>
-                    </div>
+            <div class="card-body">
+                <div id="line-chart" (window:resize)="onResize($event)" #apexLineChartRef>
+                    <apx-chart [series]="apexLineChart.series" [chart]="{
+                    height: 400,
+                    width: isMenuToggled === false ? apexLineChartRef.offsetWidth : apexLineChart.chart.width,
+                    type: 'line',
+                    zoom: {
+                      enabled: false
+                    },
+                    toolbar: {
+                      show: false
+                    }
+                  }" [xaxis]="apexLineChart.xaxis" [stroke]="apexLineChart.stroke" [tooltip]="apexLineChart.tooltip"
+                        [colors]="apexLineChart.colors" [dataLabels]="apexLineChart.dataLabels"
+                        [grid]="apexLineChart.grid"></apx-chart>
                 </div>
             </div>
         </div>
     </section>
-    <section style="width: 250px; display: flex; align-items: stretch;">
-        <div class="row" style="flex: 1;">
-            <div class="col-12">
-                <div class="card" style="height: calc(100% - 29px);">
-                    <div style="display: flex !important; justify-content: space-between !important; height: 100%;"
-                        class="card-header ">
-                        <div style="flex: 1;">
-                            <div style="display: flex; justify-content: space-between; flex: 1; margin-bottom: 24px;">
-                                <h5 style="font-weight: bold; color: black; margin-bottom: 0;">Duyurular</h5>
-                                <div class="dots">...</div>
-                            </div>
-                            <div style="overflow-y: auto">
-                                <div style="display: flex; flex-shrink: 0; gap: 16px;" *ngFor="let _ of [].constructor(6)">
-                                    <img class="noti-img" src="assets/images/icons/img.png" />
-                                    <div style="flex: 1;">
-                                        <div style="display: flex;">
-                                            <div class="noti-title">Oran Değişikliği</div>
-                                        </div>
-                                        <div class="noti-info">Lorem ipsum dolor sit amet, consectetur adipiscing</div>
-                                    </div>
+    <section style="width: 280px; display: flex; align-items: stretch;">
+        <div class="card" style="height: calc(100% - 29px);">
+            <div style="display: flex !important; justify-content: space-between !important; height: 100%;"
+                class="card-header ">
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; flex: 1; margin-bottom: 24px;">
+                        <h5 style="font-weight: bold; color: black; margin-bottom: 0;">Duyurular</h5>
+                        <div class="dots">...</div>
+                    </div>
+                    <div style="overflow-y: auto">
+                        <div style="display: flex; flex-shrink: 0; justify-content: space-between;"
+                            *ngFor="let _ of [].constructor(6)">
+                            <img class="noti-img" src="assets/images/icons/img.png" />
+                            <div style="flex: 1;">
+                                <div style="display: flex;">
+                                    <div class="noti-title">Oran Değişikliği</div>
                                 </div>
+                                <div class="noti-info">Lorem ipsum dolor sit amet, consectetur adipiscing</div>
                             </div>
                         </div>
-
-                        <div class="show-all">Hepsini göster ▾</div>
-
                     </div>
                 </div>
+
+                <div class="show-all">Hepsini göster ▾</div>
+
             </div>
         </div>
     </section>

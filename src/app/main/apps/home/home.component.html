@@ -8,8 +8,8 @@
         <button class="search-button">Ara</button>
     </div>
 </div>
-<div style="display: flex; gap:32px;">
-    <section (window:resize)="onResize($event)" id="apex-line-charts" style="width: calc(100% - 282px);">
+<div style="display: flex; gap:32px; margin: 0 16px;">
+    <section id="apex-line-charts" style="width: calc(100% - 282px);">
         <div class="card">
             <!-- <div
                         class="card-header d-flex flex-sm-row flex-column justify-content-md-between align-items-start justify-content-start">
@@ -26,7 +26,7 @@
                         </div>
                     </div> -->
             <div class="card-body">
-                <div id="line-chart" #apexLineChartRef>
+                <div id="line-chart" (window:resize)="onResize($event)" #apexLineChartRef>
                     <apx-chart [series]="apexLineChart.series" [chart]="{
                     height: 400,
                     width: isMenuToggled === false ? apexLineChartRef.offsetWidth : apexLineChart.chart.width,

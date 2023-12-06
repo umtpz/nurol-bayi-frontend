@@ -1,0 +1,189 @@
+.search-form {
+    .form-group {
+      display: flex;
+      justify-content: space-between;
+      gap: 4.3rem;
+      margin-bottom: 20px;
+  
+      input[type="text"],
+      input[type="date"],
+      select {
+        width: 31.25rem;
+        height: 3.5rem;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        background-color: #e8e8e8;
+      }
+      
+      input[type="date"]:before {
+        content: attr(placeholder) !important;
+        color: #aaa;
+        margin-right: 0.5em;
+      }
+    }
+
+    @media (max-width: 767px) {
+        .form-group {
+            gap: 2rem;
+
+            input[type="text"],
+            input[type="date"],
+            select {
+              width: calc(50% - 0.5rem);
+              font-size: 0.9rem;
+            }
+        }
+      }
+    
+      @media (min-width: 768px) {
+        .form-group {
+          justify-content: space-between;
+    
+          input[type="text"],
+          input[type="date"],
+          select {
+            width: calc(50% - 0.5rem); 
+          }
+        }
+      }
+    
+      @media (min-width: 992px) {
+        .form-group {
+          gap: 4.3rem;
+    
+          input[type="text"],
+          input[type="date"],
+          select {
+            width: 30rem;
+          }
+        }
+      }
+  }
+
+  button {
+    padding: 10px 20px;
+    background-color: #4496fb;
+    border: none;
+    width: 6rem;
+    border-radius: 4px;
+    margin-bottom: 0.7rem;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+  
+  .results-table {
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+  
+      th, td {
+        border: 4px solid #4496fb;
+        padding: 8px;
+        text-align: left;
+      }
+  
+      th {
+        color: black;
+        background-color: #f2f2f2;
+      }
+    }
+  }
+  
+  .action-dropdown {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    select {
+      width: 30%;
+      height: 3.5rem;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      background-color: #e8e8e8;
+    }
+  }
+  
+  // Buttons and Dropdown Menu
+  button, .action-dropdown select {
+    cursor: pointer;
+  }
+  
+  // Table rows
+  .results-table {
+    .action-button {
+      padding: 10px;
+      background-color: #4496fb;
+      border: none;
+      width: 4.5rem;
+      border-radius: 4px;
+      margin-bottom: 0.7rem;
+      border-radius: 20px;
+      color: white;
+      cursor: pointer;
+  
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
+
+ //* Modal styling
+.cancel-confirmation-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .cancel-confirmation-modal {
+    color: #000;
+    background: #e8e8e8;
+    padding: 20px;
+    border-radius: 15px;
+    width: 26rem; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  .modal-actions button {
+    width: 100%;
+    height: 2rem;
+    padding: 3px 20px;
+    margin-top: 6px;
+    color: white;
+    border: 2px solid #4496fb;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+  }
+  
+  .modal-actions button { 
+    background-color: white;
+    color: #007bff;
+  }
+  
+  .modal-actions button:hover {
+    background-color: #4496fb;
+    color: white;
+  }
+  
+  .cancel-confirmation-modal p {
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #000;
+  }

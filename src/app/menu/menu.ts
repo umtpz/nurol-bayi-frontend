@@ -3,6 +3,7 @@ import { CoreMenu } from '@core/types';
 //? DOC: http://localhost:7777/demo/vuexy-angular-admin-dashboard-template/documentation/guide/development/navigation-menus.html#interface
 
 export const menu: CoreMenu[] = [
+  //* Home
   {
     id: 'home',
     title: 'Anasayfa',
@@ -10,7 +11,15 @@ export const menu: CoreMenu[] = [
     icon: 'home',
     url: 'apps/home'
   },
-  // Dashboard
+  //* Application Observation
+  {
+    id: 'app-observation',
+    title: 'Başvuru Gözlem',
+    type: 'item',
+    icon: 'file-text',
+    url: 'apps/application-observation'
+  },
+  //* Dashboard
   {
     id: 'dashboard',
     title: 'Dashboard',

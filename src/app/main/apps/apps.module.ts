@@ -15,6 +15,10 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
   },
   {
+    path: 'application-observation',
+    loadChildren: () => import('./app-observation/app-observation.module').then(m => m.AppObservationModule)
+  },
+  {
     path: 'email',
     loadChildren: () => import('./email/email.module').then(m => m.EmailModule)
   },
@@ -48,6 +52,7 @@ FullCalendarModule.registerPlugins([dayGridPlugin, timeGridPlugin, listPlugin, i
 
 @NgModule({
   declarations: [
+ 
   ],
   imports: [CommonModule, RouterModule.forChild(routes)]
 })

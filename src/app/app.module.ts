@@ -81,6 +81,11 @@ const appRoutes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: '',
+    redirectTo: '/apps/application-observation',
+    pathMatch: 'full'
+  },
+  {
     path: '**',
     redirectTo: '/pages/miscellaneous/error' //Error 404 - Page not found
   }

@@ -25,6 +25,8 @@ export class AppObservationComponent {
   isCancellationConfirmed: boolean = false; //* cancel confirmation status
   isSmsSent: boolean = false; //* SMS sent status
   showSmsConfirmation: boolean = false;  //* for SMS Confirmation
+  showCreditDetailObservation: boolean = false;  //* credit detail observation status
+  showPaymentPlan: boolean = false; //* payment plan status
   selectedApplicationId: number | null = null;
   showCancelConfirmation = false; //* cancel modal
 
@@ -33,6 +35,22 @@ export class AppObservationComponent {
     { basvuruNo: 123456, tcKimlikNo: 12345678901, adSoyad: 'NGSS', tarih: '01/01/2023', talepTutar: '10.000 TL', onaylananTutar: '9.000 TL', status: 'Onaylandı' },
     { basvuruNo: 123457, tcKimlikNo: 12345678901, adSoyad: 'NGSS', tarih: '01/01/2023', talepTutar: '25.000 TL', onaylananTutar: '20.000 TL', status: 'Onaylandı' },
   ];
+
+  paymentPlan = [
+    ["48.848","1.672","400","1.152"],
+    ["47.684","1.672","391","1.164"],
+    ["46.507","1.672","381","1.176"],
+    ["45.319","1.672","372","1.189"],
+    ["44.118","1.672","363","1.201"],
+    ["42.905","1.672","453","1.213"],
+    ["41.679","1.672","353","1.226"],
+    ["48.848","1.672","400","1.152"],
+    ["48.848","1.672","400","1.152"],
+    ["48.848","1.672","400","1.152"],
+    ["48.848","1.672","400","1.152"],
+    ["48.848","1.672","400","1.152"],
+  ]
+
   getDefaultStartDate(): string {
     const currentDate = new Date();
     const defaultStartDate = new Date(currentDate);
@@ -64,6 +82,8 @@ export class AppObservationComponent {
   //* detects select change
   onActionChange(action: string): void {
     this.closeCancelConfirmation();
+    this.showCreditDetailObservation = false;
+    this.showPaymentPlan = false;
     
     switch (action) {
       case 'İptal':
@@ -72,6 +92,11 @@ export class AppObservationComponent {
       case 'SMS':
         this.showSmsConfirmation = true;
         break;
+      case 'Kredi Detay Gözlem':
+        this.showCreditDetailObservation = true;
+        break;
+      case 'Ödeme Planı Gözlem':
+        this.showPaymentPlan = true;
     }
   }
 

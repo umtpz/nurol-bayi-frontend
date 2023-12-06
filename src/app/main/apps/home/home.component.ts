@@ -189,13 +189,15 @@ export class HomeComponent implements OnInit {
           // Get Dynamic Width for Charts
           this.isMenuToggled = true;
           this.apexLineChart.chart.width = parseInt(this.apexLineChartRef?.nativeElement.offsetWidth);
-        }, 2000);
+        }, 900);
       }
     });
   }
 
   onResize(event) {
-    this.apexLineChart.chart.width = this.apexLineChartRef?.nativeElement.offsetWidth;
+    setTimeout(() => {
+      this.apexLineChart.chart.width = this.apexLineChartRef?.nativeElement.offsetWidth;
+    }, 500)
   }
 
 }

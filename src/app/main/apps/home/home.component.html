@@ -1,4 +1,4 @@
-<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 48px; margin-top: 16px;">
+<div class="mx-2" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 48px; margin-top: 16px;">
     <h3 style="color: #4998f7; margin-bottom: 0;">Sayın Satıcı {{"John Doe"}}, Hoşgeldiniz...</h3>
     <div style="display: flex; gap: 16px;">
         <div style="position: relative;"><img class="input-icon" src="assets/images/icons/search.svg" /><input
@@ -54,12 +54,13 @@
                         <div class="dots">...</div>
                     </div>
                     <div style="overflow-y: auto">
-                        <div style="display: flex; flex-shrink: 0; justify-content: space-between;"
+                        <div style="display: flex; flex-shrink: 0; justify-content: space-between; gap: 8px;"
                             *ngFor="let _ of [].constructor(6)">
                             <img class="noti-img" src="assets/images/icons/img.png" />
                             <div style="flex: 1;">
-                                <div style="display: flex;">
+                                <div style="display: flex; justify-content: space-between;">
                                     <div class="noti-title">Oran Değişikliği</div>
+                                    <div class="noti-date">02-12-23</div>
                                 </div>
                                 <div class="noti-info">Lorem ipsum dolor sit amet, consectetur adipiscing</div>
                             </div>

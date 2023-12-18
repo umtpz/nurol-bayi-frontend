@@ -1,0 +1,24 @@
+table {
+    width: calc(100% + 4px);
+    margin: -2px;
+}
+
+td, th {
+    padding: 6px 12px;
+}
+
+.sticky{
+    position: sticky;
+    top: -2px;
+    background: white;
+}
+
+.td,
+.th {
+    background: white;
+    border: solid 2px #4998f7;
+}
+
+a:hover{
+    opacity: .7;
+}

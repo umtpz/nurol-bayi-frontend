@@ -1,20 +1,5 @@
-<div *ngIf="horizontalMenu" class="navbar-header d-xl-block d-none">
-  <!-- Navbar brand -->
-  <ul class="nav navbar-nav flex-row">
-    <li class="nav-item">
-      <!-- <a class="navbar-brand" [routerLink]="['/']">
-        <span class="brand-logo">
-          <img src="{{ coreConfig.app.appLogoImage }}" alt="brand-logo" width="36" />
-        </span>
-        <h2 class="brand-text mb-0">{{ coreConfig.app.appName }}</h2>
-      </a> -->
-    </li>
-  </ul>
-  <!--/ Navbar brand -->
-</div>
-
 <div class="navbar-container d-flex content">
-  <div class="bookmark-wrapper d-flex align-items-center">
+  <!-- <div class="bookmark-wrapper d-flex align-items-center"> -->
     <!-- Menu Toggler | Menu icon will be hidden in case of layout without menu -->
     <!-- <ul class="nav navbar-nav d-xl-none" *ngIf="!coreConfig.layout.menu.hidden">
       <li class="nav-item">
@@ -28,7 +13,7 @@
     <!-- Bookmark -->
     <!-- <app-navbar-bookmark></app-navbar-bookmark> -->
     <!--/ Bookmark -->
-  </div>
+  <!-- </div> -->
   <ul class="nav navbar-nav align-items-center ml-auto">
     <!-- Language selection -->
     <!-- <li ngbDropdown class="nav-item dropdown dropdown-language">
@@ -97,4 +82,19 @@
     </li>
     <!--/ User Dropdown -->
   </ul>
+</div>
+
+<div *ngIf="horizontalMenu" class="navbar-header d-xl-block d-none">
+  <!-- Navbar brand -->
+  <ul class="nav navbar-nav flex-row">
+    <li class="nav-item">
+      <!-- <a class="navbar-brand" [routerLink]="['/']">
+        <span class="brand-logo">
+          <img src="{{ coreConfig.app.appLogoImage }}" alt="brand-logo" width="36" />
+        </span>
+        <h2 class="brand-text mb-0">{{ coreConfig.app.appName }}</h2>
+      </a> -->
+    </li>
+  </ul>
+  <!--/ Navbar brand -->
 </div>

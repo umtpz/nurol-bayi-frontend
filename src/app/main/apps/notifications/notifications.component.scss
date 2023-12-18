@@ -1,0 +1,28 @@
+
+.noti-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    font-weight: bold;
+    color: black;
+}
+
+.noti-info {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 10px;
+    padding-bottom: 7px;
+    border-bottom: solid 1px #ddd;
+    margin-bottom: 14px;
+}
+
+.noti-date{
+    font-size: 10px;
+}
+
+.noti-img{
+    width: 32px;
+    height: 32px;
+}

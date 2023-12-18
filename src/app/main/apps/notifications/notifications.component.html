@@ -1,0 +1,25 @@
+<section style="display: flex; align-items: stretch;">
+    <div class="card" style="width: 100%;">
+        <div style="display: flex !important; justify-content: space-between !important; height: 100%;"
+            class="card-header ">
+            <div style="flex: 1;">
+                <div style="display: flex; justify-content: space-between; flex: 1; margin-bottom: 24px;">
+                    <h5 style="font-weight: bold; color: black; margin-bottom: 0;">Duyurular</h5>
+                </div>
+                <div style="overflow-y: auto">
+                    <div style="display: flex; flex-shrink: 0; justify-content: space-between; gap:16px;"
+                        *ngFor="let _ of [].constructor(6)">
+                        <img class="noti-img" src="assets/images/icons/img.png" />
+                        <div style="flex: 1;">
+                            <div style="display: flex; justify-content: space-between;">
+                                <div class="noti-title">Oran Değişikliği</div>
+                                <div class="noti-date">02-12-23</div>
+                            </div>
+                            <div class="noti-info">Lorem ipsum dolor sit amet, consectetur adipiscing</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

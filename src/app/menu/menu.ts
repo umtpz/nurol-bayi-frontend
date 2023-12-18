@@ -5,61 +5,100 @@ import { CoreMenu } from '@core/types';
 export const menu: CoreMenu[] = [
   //* Home
   {
-    id: 'home',
-    title: 'Anasayfa',
-    type: 'item',
-    icon: 'home',
-    url: 'apps/home'
+    id: 'apps',
+    type: 'section',
+    title: 'Sayfalar',
+    translate: 'MENU.APPS.SECTION',
+    icon: 'package',
+    children: [
+      {
+        id: 'home',
+        title: 'Anasayfa',
+        type: 'item',
+        icon: 'home',
+        url: 'apps/home'
+      },
+      {
+        id: 'application',
+        title: 'Başvuru',
+        type: 'item',
+        icon: 'file',
+        url: 'apps/application'
+      },
+      {
+        id: 'app-observation',
+        title: 'Başvuru Gözlem',
+        type: 'item',
+        icon: 'file-text',
+        url: 'apps/application-observation'
+      },
+      {
+        id: 'library',
+        title: 'Kütüphane',
+        type: 'item',
+        icon: 'book-open',
+        url: 'apps/library'
+      },
+      {
+        id: 'notifications',
+        title: 'Duyurular',
+        type: 'item',
+        icon: 'bell',
+        url: 'apps/notifications'
+      },
+    ]
   },
   {
-    id: 'application',
-    title: 'Başvuru',
-    type: 'item',
-    icon: 'file-text',
-    url: 'apps/application'
-  },
-  {
-    id: 'app-observation',
-    title: 'Başvuru Gözlem',
-    type: 'item',
-    icon: 'file-text',
-    url: 'apps/application-observation'
+    id: 'apps',
+    type: 'section',
+    title: 'Kullanıcı',
+    translate: 'MENU.APPS.SECTION',
+    icon: 'package',
+    children: [
+      {
+        id: 'app-observation',
+        title: 'Çıkış',
+        type: 'item',
+        icon: 'log-out',
+        url: 'apps/application-observation1'
+      },
+    ]
   },
   //* Dashboard
-  // {
-  //   id: 'dashboard',
-  //   title: 'Dashboard',
-  //   translate: 'MENU.DASHBOARD.COLLAPSIBLE',
-  //   type: 'collapsible',
-  //   // role: ['Admin'], //? To hide collapsible based on user role
-  //   icon: 'home',
-  //   badge: {
-  //     title: '2',
-  //     translate: 'MENU.DASHBOARD.BADGE',
-  //     classes: 'badge-light-warning badge-pill'
-  //   },
-  //   children: [
-  //     {
-  //       id: 'analytics',
-  //       title: 'Analytics',
-  //       translate: 'MENU.DASHBOARD.ANALYTICS',
-  //       type: 'item',
-  //       role: ['Admin'], //? To set multiple role: ['Admin', 'Client']
-  //       icon: 'circle',
-  //       url: 'dashboard/analytics'
-  //     },
-  //     {
-  //       // If role is not assigned will be display to all
-  //       id: 'ecommerce',
-  //       title: 'eCommerce',
-  //       translate: 'MENU.DASHBOARD.ECOMMERCE',
-  //       type: 'item',
-  //       icon: 'circle',
-  //       url: 'dashboard/ecommerce'
-  //     }
-  //   ]
-  // },
-  // Apps & Pages
+  {
+    id: 'dashboard',
+    title: 'Dashboard',
+    translate: 'MENU.DASHBOARD.COLLAPSIBLE',
+    type: 'collapsible',
+    // role: ['Admin'], //? To hide collapsible based on user role
+    icon: 'home',
+    badge: {
+      title: '2',
+      translate: 'MENU.DASHBOARD.BADGE',
+      classes: 'badge-light-warning badge-pill'
+    },
+    children: [
+      {
+        id: 'analytics',
+        title: 'Analytics',
+        translate: 'MENU.DASHBOARD.ANALYTICS',
+        type: 'item',
+        role: ['Admin'], //? To set multiple role: ['Admin', 'Client']
+        icon: 'circle',
+        url: 'dashboard/analytics'
+      },
+      {
+        // If role is not assigned will be display to all
+        id: 'ecommerce',
+        title: 'eCommerce',
+        translate: 'MENU.DASHBOARD.ECOMMERCE',
+        type: 'item',
+        icon: 'circle',
+        url: 'dashboard/ecommerce'
+      }
+    ]
+  },
+  // //Apps & Pages
   // {
   //   id: 'apps',
   //   type: 'section',
@@ -920,7 +959,7 @@ export const menu: CoreMenu[] = [
   //     }
   //   ]
   // },
-  // Forms & Tables
+  // //Forms & Tables
   // {
   //   id: 'forms-table',
   //   type: 'section',

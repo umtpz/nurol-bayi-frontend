@@ -1,30 +1,30 @@
-<div style="">
-    <div class="d-flex justify-content-center">
+<div class="p-3">
+  <div class="d-flex justify-content-center">
     <div class="search-form">
-        <div class="form-group">
-            <input type="text" class="app-observation-input" placeholder="Başvuru No">
-            <input type="text" class="app-observation-input" placeholder="TC Kimlik No">
-        </div>
-        <div class="form-group">
-            <input type="date" class="app-observation-input" placeholder="Başlangıç Tarihi" [value]="getDefaultStartDate()">
-            <input type="date" class="app-observation-input" placeholder="Bitiş Tarihi ">
-        </div>
-        <div class="form-group">
-            <select class="app-observation-input">
-                <option>Statü</option>
-                <!-- Options -->
-            </select>
-            <select class="app-observation-input">
-                <option>Finansman Türü</option>
-                <!-- Options -->
-            </select>
-        </div>
+      <div class="form-group">
+        <input type="text" class="app-observation-input" placeholder="Başvuru No">
+        <input type="text" class="app-observation-input" placeholder="TC Kimlik No">
+      </div>
+      <div class="form-group">
+        <input type="date" class="app-observation-input" placeholder="Başlangıç Tarihi" [value]="getDefaultStartDate()">
+        <input type="date" class="app-observation-input" placeholder="Bitiş Tarihi ">
+      </div>
+      <div class="form-group">
+        <select class="app-observation-input">
+          <option>Statü</option>
+          <!-- Options -->
+        </select>
+        <select class="app-observation-input">
+          <option>Finansman Türü</option>
+          <!-- Options -->
+        </select>
+      </div>
+    </div>
+    <div class="form-group d-flex align-items-end col-md-1" style="margin-left: 1rem;">
+      <button style="width: 5rem; height: 3.2rem; margin-bottom: 0.6rem;">Ara</button>
+    </div>
   </div>
-  <div class="form-group d-flex align-items-end col-md-1" style="margin-left: 1rem;">
-    <button style="width: 5rem; height: 3.2rem; margin-bottom: 0.6rem;">Ara</button>
-  </div>
-</div>
-  
+
   <div class="results-table">
     <table>
       <thead>
@@ -42,21 +42,21 @@
       <tbody>
         <!-- Table row -->
         <tr *ngFor="let item of items">
-            <td>{{ item.basvuruNo }}</td>
-            <td>{{ item.tcKimlikNo }}</td>
-            <td>{{ item.adSoyad }}</td>
-            <td>{{ item.tarih }}</td>
-            <td>{{ item.talepTutar }}</td>
-            <td>{{ item.onaylananTutar }}</td>
-            <td>{{ item.status }}</td>
-            <td> 
-                <button class="action-button" (click)="openDropdown(item.basvuruNo)">Seç</button>
-            </td>
-          </tr>
+          <td>{{ item.basvuruNo }}</td>
+          <td>{{ item.tcKimlikNo }}</td>
+          <td>{{ item.adSoyad }}</td>
+          <td>{{ item.tarih }}</td>
+          <td>{{ item.talepTutar }}</td>
+          <td>{{ item.onaylananTutar }}</td>
+          <td>{{ item.status }}</td>
+          <td>
+            <button class="action-button" (click)="openDropdown(item.basvuruNo)">Seç</button>
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>
-  
+
   <div class="action-dropdown" *ngIf="showActionDropdown">
     <select [(ngModel)]="selectedAction" (ngModelChange)="onActionChange($event)">
       <option value="İşlemi Seçiniz" disabled selected>İşlemi seçiniz</option>
@@ -93,15 +93,17 @@
     <div class="cancel-confirmation-modal">
       <!-- If SMS confirmation is awaited -->
       <div *ngIf="!isSmsSent">
-        <p>{{ selectedApplicationId }} numaralı başvurunuz için müşterinin kayıtlı cep telefonuna tekrar SMS ile sözleşme linki gönderilecektir. Devam etmek istiyor musunuz?</p>
+        <p>{{ selectedApplicationId }} numaralı başvurunuz için müşterinin kayıtlı cep telefonuna tekrar SMS ile
+          sözleşme linki gönderilecektir. Devam etmek istiyor musunuz?</p>
         <div class="modal-actions">
-            <button (click)="confirmSmsSending()">Evet</button>
+          <button (click)="confirmSmsSending()">Evet</button>
           <button (click)="closeSmsConfirmation()">Hayır</button>
         </div>
       </div>
       <!-- If SMS was sent -->
       <div *ngIf="isSmsSent">
-        <p>{{ selectedApplicationId }} numaralı başvuru için sistemde kayıtlı cep telefonuna SMS ile sözleşme linki gönderilmiştir. Müşteriyi linke tıklayarak onay vermesi için yönlendiriniz.</p>
+        <p>{{ selectedApplicationId }} numaralı başvuru için sistemde kayıtlı cep telefonuna SMS ile sözleşme linki
+          gönderilmiştir. Müşteriyi linke tıklayarak onay vermesi için yönlendiriniz.</p>
         <div class="modal-actions">
           <button (click)="closeSmsConfirmation()">Kapat</button>
         </div>
@@ -111,44 +113,44 @@
 
   <div *ngIf="showCreditDetailObservation" class="credit-detail-observation col-12">
 
-      <div class="col-12 d-flex justify-content-around mt-4">
-          <div class="col-1 offer-box">
-              <div class="offer-box-title" style="background: #d491dd; color: black;">Oran</div>
-              % 2,59
-          </div>
-          <div class="col-1 offer-box">
-              <div class="offer-box-title" style="background: #fcd284; color: black;">Vade</div>
-              30 ay
-          </div>
-          <div class="col-1 offer-box">
-              <div class="offer-box-title" style="background: #c1d776; color: black;">Taksit</div>
-              2.683 ₺
-          </div>
-          <div class="col-1 offer-box">
-            <div class="offer-box-title" style="background: #94f27b; color: black;">Geçerlilik<br>Tarihi
-            </div>
-            12/12/2023
-        </div>
+    <div class="col-12 d-flex justify-content-around mt-4">
+      <div class="col-1 offer-box">
+        <div class="offer-box-title" style="background: #d491dd; color: black;">Oran</div>
+        % 2,59
       </div>
+      <div class="col-1 offer-box">
+        <div class="offer-box-title" style="background: #fcd284; color: black;">Vade</div>
+        30 ay
+      </div>
+      <div class="col-1 offer-box">
+        <div class="offer-box-title" style="background: #c1d776; color: black;">Taksit</div>
+        2.683 ₺
+      </div>
+      <div class="col-1 offer-box">
+        <div class="offer-box-title" style="background: #94f27b; color: black;">Geçerlilik<br>Tarihi
+        </div>
+        12/12/2023
+      </div>
+    </div>
 
-      <div class="col-12 d-flex justify-content-around mt-4">
-          <div class="col-1 offer-box">
-              <div class="offer-box-title" style="background: #fdaed1; color: black;">Kredi<br>Tutarı</div>
-              50.000 ₺
-          </div>
-          <div class="col-1 offer-box">
-              <div class="offer-box-title" style="background: #aee3fd; color: black;">Masraf</div>
-              287,80 ₺
-          </div>
-          <div class="col-1 offer-box">
-              <div class="offer-box-title" style="background: #3966d1; color: white;">Faiz</div>
-              30.208.30 ₺
-          </div>
-          <div class="col-1 offer-box">
-            <div class="offer-box-title" style="background: #ede9a0; color: black;">Toplam<br>Maliyet</div>
-            80.491,30 ₺
-        </div>
+    <div class="col-12 d-flex justify-content-around mt-4">
+      <div class="col-1 offer-box">
+        <div class="offer-box-title" style="background: #fdaed1; color: black;">Kredi<br>Tutarı</div>
+        50.000 ₺
       </div>
+      <div class="col-1 offer-box">
+        <div class="offer-box-title" style="background: #aee3fd; color: black;">Masraf</div>
+        287,80 ₺
+      </div>
+      <div class="col-1 offer-box">
+        <div class="offer-box-title" style="background: #3966d1; color: white;">Faiz</div>
+        30.208.30 ₺
+      </div>
+      <div class="col-1 offer-box">
+        <div class="offer-box-title" style="background: #ede9a0; color: black;">Toplam<br>Maliyet</div>
+        80.491,30 ₺
+      </div>
+    </div>
 
   </div>
 
